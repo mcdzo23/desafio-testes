@@ -1,0 +1,60 @@
+// Calculadora
+
+namespace calculadora
+{
+    public class Calculadoraimplementação
+    {
+   private List<string> ListaHistorico;
+   int res = 0;
+   public calculadora()
+   {
+      ListaHistorico = new List<string>();
+      
+   }
+
+
+    
+     public  int Somar(int num1, int num2)
+     {
+      int res = num1+ num2;
+      ListaHistorico.Insert(0, "Resultado" +res);
+        return num1 + num2 ;
+     }
+
+     public  int Subtrair(int num1, int num2)
+     {
+      int res = num1-num2;
+       ListaHistorico.Insert(0, "Resultado" +res);
+        return num1 - num2 ;
+     }
+
+     public  int Multiplicar(int num1, int num2)
+     {
+      int res = num1* num2;
+       ListaHistorico.Insert(0, "Resultado" +res);
+        return num1 * num2 ;
+     }
+
+     public  int Dividir(int num1, int num2)
+     {
+      int res = num1 / num2;
+       ListaHistorico.Insert(0, "Resultado" +res);
+        return num1 / num2 ;
+
+        }
+
+
+
+        public List<string> historico()
+        {
+         
+         ListaHistorico.RemoveRange(3,ListaHistorico.Count - 3);
+         return ListaHistorico;
+        }
+
+       
+
+
+
+    }
+}
