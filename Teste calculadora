@@ -1,0 +1,83 @@
+// Testes calculadora
+
+namespace calculadoratestes;
+
+public class Calculadoratestes
+
+{   
+
+    public Calculadoratestes()
+    {
+        calc = new Calculadoraimplementação();
+    }
+
+    private Calculadoraimplementação calc; 
+
+    [Fact]
+    public void TesteSoma()
+    {
+    int num1 =2;
+    int num2 = 2;
+
+    int resultado = calc.Somar(num1,num2);
+
+    Assert.Equal(4,resultado);
+    }
+    [Fact]
+  
+    public void TesteSubtrair()
+    {
+    int num1 =2;
+    int num2 = 2;
+
+    int resultado = calc.Subtrair(num1,num2);
+
+    Assert.Equal(0,resultado);
+    }
+    [Fact]
+    
+    
+    public void TesteMultiplicar()
+    {
+    int num1 =2;
+    int num2 = 2;
+
+    int resultado = calc.Multiplicar(num1,num2);
+
+    Assert.Equal(4,resultado);
+    }
+
+[Fact]
+    public void TesteDividir()
+    {
+    int num1 =2;
+    int num2 = 2;
+
+    int resultado = calc.Dividir(num1,num2);
+
+    Assert.Equal(0,resultado);
+    }
+
+    [Fact]
+    public void Divisaoporzero()
+    {
+    Assert.Throws<DivideByZeroException>(() => calc.Dividir(3,0));
+
+    }
+    [Fact]
+    public void Testehistorico()
+    {
+       Assert.NotEmpty(calc.historico());
+    }
+   
+    
+
+
+
+
+    
+
+
+
+}
+    
